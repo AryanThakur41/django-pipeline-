@@ -1,6 +1,8 @@
 #!/bin/bash
 
-cd /home/thakur/simple-django-app/cool_counters
+git clone https://github.com/AryanThakur41/django-pipeline-.git
+
+cd /home/ubuntu/simple-django-app/cool_counters
 
 # Pull the latest code from the repository
 git pull origin main
