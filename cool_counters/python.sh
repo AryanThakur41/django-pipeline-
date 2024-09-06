@@ -29,7 +29,13 @@ fi
 
 # Install python3-venv
 echo "Installing python3-venv..."
-sudo apt install -y python3-venv
+sudo add-apt-repository universe
+sudo apt install python3.12-venv
+pip install virtualenv
+virtualenv myenv
+source myenv/bin/activate
+
+
 
 # Check if python3-venv was installed successfully
 if python3 -m venv --help &>/dev/null; then
