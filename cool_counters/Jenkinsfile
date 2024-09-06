@@ -7,28 +7,31 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/AryanThakur41/django-pipeline-.git'
             }
         }
-         stage('ssh on server') {
+        
+        stage('SSH on Server') {
             steps {
                 sshagent (credentials: ['my-ssh-key']) {
                     sh '''
                     ssh -o StrictHostKeyChecking=no ubuntu@3.85.135.184 "bash -s" < ./python.sh
                     '''
+                }
             }
         }
-        stage('install python') {
+        
+        stage('Install Python') {
             steps {
-                
                 sh '''
-               chmod +x python.sh   
-               ./python.sh
+                chmod +x python.sh   
+                ./python.sh
                 '''
             }
         }
-          stage('deploy') {
+        
+        stage('Deploy') {
             steps {
                 sh '''
-               chmod +x deploy.sh   
-               ./deploy.sh
+                chmod +x deploy.sh   
+                ./deploy.sh
                 '''
             }
         }
@@ -42,5 +45,4 @@ pipeline {
             echo 'Deployment failed!'
         }
     }
-}
 }
