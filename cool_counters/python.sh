@@ -29,9 +29,9 @@ fi
 
 # Install python3-venv
 echo "Installing python3-venv..."
-sudo add-apt-repository universe
-sudo apt install python3.12-venv
-pip install virtualenv
+sudo add-apt-repository universe -y
+sudo apt install python3.12-venv -y
+pip install virtualen -y
 virtualenv myenv
 source myenv/bin/activate
 
