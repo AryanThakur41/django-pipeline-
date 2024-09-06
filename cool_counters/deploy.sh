@@ -3,22 +3,30 @@
 # Define repository URL and target directory
 REPO_URL="https://github.com/AryanThakur41/django-pipeline-.git"
 TARGET_DIR="/home/ubuntu/simple-django-app"
+APP_DIR="$TARGET_DIR/cool_counters"
+
+# Check if the target directory exists and has proper permissions
+if [ ! -d "$TARGET_DIR" ]; then
+    echo "Target directory does not exist. Creating directory..."
+    sudo mkdir -p "$TARGET_DIR" || { echo "Failed to create target directory."; exit 1; }
+    sudo chown $(whoami):$(whoami) "$TARGET_DIR" || { echo "Failed to change ownership of target directory."; exit 1; }
+fi
 
 # Clone the repository if it doesn't exist
-if [ ! -d "$TARGET_DIR" ]; then
-    git clone "$REPO_URL" "$TARGET_DIR"
+if [ ! -d "$APP_DIR" ]; then
+    git clone "$REPO_URL" "$APP_DIR" || { echo "Failed to clone repository."; exit 1; }
 else
     echo "Repository already cloned. Pulling the latest code..."
-    cd "$TARGET_DIR" || { echo "Failed to navigate to target directory."; exit 1; }
-    git pull origin main
+    cd "$APP_DIR" || { echo "Failed to navigate to application directory."; exit 1; }
+    git pull origin main || { echo "Failed to pull latest code."; exit 1; }
 fi
 
 # Navigate to the application directory
-cd "$TARGET_DIR/cool_counters" || { echo "Failed to navigate to application directory."; exit 1; }
+cd "$APP_DIR" || { echo "Failed to navigate to application directory."; exit 1; }
 
 # Create a virtual environment if it doesn't exist
 if [ ! -d "venv" ]; then
-    python3 -m venv venv
+    python3 -m venv venv || { echo "Failed to create virtual environment."; exit 1; }
 fi
 
 # Activate the virtual environment
