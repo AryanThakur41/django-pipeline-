@@ -10,7 +10,7 @@ pipeline {
         
         stage('SSH on Server') {
             steps {
-                sshagent (credentials: ['my-ssh-key']) {
+                sshagent (credentials: ['ssh-key']) {
                     sh '''
                     ssh -o StrictHostKeyChecking=no ubuntu@3.85.135.184 "bash -s" < ./python.sh
                     '''
