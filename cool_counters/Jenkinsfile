@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sshagent (credentials: ['ssh-key']) {
                     sh '''
-                    ssh -o StrictHostKeyChecking=no ubuntu@3.85.135.184 "bash -s" < ./python.sh
+                    ssh -o StrictHostKeyChecking=no ubuntu@3.85.135.184 "bash -s" < ./cool_counters/python.sh
                     '''
                 }
             }
@@ -21,8 +21,8 @@ pipeline {
         stage('Install Python') {
             steps {
                 sh '''
-                chmod +x python.sh   
-                ./python.sh
+                chmod +x ./cool_counters/python.sh   
+                ./cool_counters/python.sh
                 '''
             }
         }
@@ -30,8 +30,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                chmod +x deploy.sh   
-                ./deploy.sh
+                chmod +x ./cool_counters/deploy.sh   
+                ./cool_counters/deploy.sh
                 '''
             }
         }
