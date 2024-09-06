@@ -18,15 +18,7 @@ pipeline {
             }
         }
         
-        stage('Install Python') {
-            steps {
-                sh '''
-                chmod +x ./cool_counters/python.sh   
-                ./cool_counters/python.sh
-                '''
-            }
-        }
-        
+       
         stage('Deploy') {
             steps {
                 sh '''
