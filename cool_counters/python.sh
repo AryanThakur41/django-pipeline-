@@ -18,4 +18,5 @@ else
     sudo apt install -y python3-pip
     echo "pip installed: $(pip --version)"
 fi
+sudo su
 sudo apt install python3.12-venv -y
