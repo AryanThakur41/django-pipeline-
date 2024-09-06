@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/your-repo/django-app.git'
+            }
+        }
+         stage('ssh on server') {
+            steps {
+                sshagent (credentials: ['my-ssh-key']) {
+                    sh '''
+                    ssh -o StrictHostKeyChecking=no ubuntu@3.85.135.184 "bash -s" < ./python.sh
+                    '''
+            }
+        }
+        stage('install python') {
+            steps {
+                
+                sh '''
+               chmod +x python.sh   
+               ./python.sh
+                '''
+            }
+        }
+          stage('deploy') {
+            steps {
+                sh '''
+               chmod +x deploy.sh   
+               ./deploy.sh
+                '''
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Deployment was successful!'
+        }
+        failure {
+            echo 'Deployment failed!'
+        }
+    }
+}
+}
