@@ -5,15 +5,16 @@ REPO_URL="https://github.com/AryanThakur41/django-pipeline-.git"
 TARGET_DIR="/home/ubuntu/simple-django-app"
 APP_DIR="$TARGET_DIR/cool_counters"
 
-# Check if the target directory exists and has proper permissions
+# Create target directory if it does not exist
 if [ ! -d "$TARGET_DIR" ]; then
     echo "Target directory does not exist. Creating directory..."
     sudo mkdir -p "$TARGET_DIR" || { echo "Failed to create target directory."; exit 1; }
     sudo chown $(whoami):$(whoami) "$TARGET_DIR" || { echo "Failed to change ownership of target directory."; exit 1; }
 fi
 
-# Clone the repository if it doesn't exist
+# Clone the repository if the application directory does not exist
 if [ ! -d "$APP_DIR" ]; then
+    echo "Cloning the repository..."
     git clone "$REPO_URL" "$APP_DIR" || { echo "Failed to clone repository."; exit 1; }
 else
     echo "Repository already cloned. Pulling the latest code..."
