@@ -7,7 +7,7 @@ else
 fi
 
 
-cd /home/ubuntu/simple-django-app/cool_counters
+cd /home/ubuntu/django-pipeline-
 
 # Pull the latest code from the repository
 git pull origin main
