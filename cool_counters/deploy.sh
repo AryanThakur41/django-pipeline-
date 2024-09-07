@@ -13,8 +13,8 @@ cd /home/ubuntu/django-pipeline-
 git pull origin main
 
 # Create a virtual environment if it doesn't exist
-if [ ! -d "venv" ]; then
-    python3 -m venv venv
+if [ ! -d "myenv" ]; then
+    python3 -m venv myenv
 fi
 
 # Activate the virtual environment
