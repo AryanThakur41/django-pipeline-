@@ -8,7 +8,7 @@ pipeline {
             }
         }
         
-        stage('SSH on Server') {
+        stage('SSH on Server - Python Setup') {
             steps {
                 sshagent (credentials: ['ssh-key']) {
                     sh '''
@@ -18,14 +18,15 @@ pipeline {
             }
         }
         
-       
-        steps {
+        stage('SSH on Server - Deployment') {
+            steps {
                 sshagent (credentials: ['ssh-key']) {
                     sh '''
                     ssh -o StrictHostKeyChecking=no ubuntu@54.205.201.56 "bash -s" < ./cool_counters/deploy.sh
                     '''
                 }
             }
+        }
     }
     
     post {
