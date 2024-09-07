@@ -2,17 +2,17 @@
 
 # Clone the repository only if the directory doesn't exist
 if [ ! -d "/home/ubuntu/django-pipeline" ]; then
-    git clone https://github.com/AryanThakur41/django-pipeline /home/ubuntu/django-pipeline
+    git clone https://github.com/AryanThakur41/django-pipeline-.git /home/ubuntu/django-pipeline
 else
     echo "Directory already exists, skipping clone."
 fi
 
 # Correct the path (remove the trailing '-')
-sudo chown -R ubuntu:ubuntu /home/ubuntu/django-pipeline
-sudo chmod -R 755 /home/ubuntu/django-pipeline
+sudo chown -R ubuntu:ubuntu /home/ubuntu/django-pipeline-
+sudo chmod -R 755 /home/ubuntu/django-pipeline-
 
 # Navigate to the correct directory
-cd /home/ubuntu/django-pipeline || exit 1
+cd /home/ubuntu/django-pipeline- || exit 1
 
 # Pull the latest code from the repository
 git pull origin main
