@@ -18,7 +18,7 @@ if [ ! -d "myenv" ]; then
 fi
 
 # Activate the virtual environment
-source venv/bin/activate
+source myenv/bin/activate
 
 # Install required dependencies
 pip install -r ./cool_counters/requirements.txt
