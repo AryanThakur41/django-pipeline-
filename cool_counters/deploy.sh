@@ -32,4 +32,4 @@ python3 ./cool_counters/manage.py migrate
 # Restart Gunicorn or Django server
 # sudo systemctl restart gunicorn
 echo "runnig server"
-python3 ./cool_counters/manage.py runserver
+python3 ./cool_counters/manage.py runserver 0.0.0.0:8000
