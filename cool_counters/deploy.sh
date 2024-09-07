@@ -1,6 +1,11 @@
 #!/bin/bash
 
-git clone https://github.com/AryanThakur41/django-pipeline-.git
+if [ -d "django-pipeline-" ]; then
+    cd django-pipeline- && git pull origin main
+else
+    git clone https://github.com/AryanThakur41/django-pipeline-
+fi
+
 
 cd /home/ubuntu/simple-django-app/cool_counters
 
