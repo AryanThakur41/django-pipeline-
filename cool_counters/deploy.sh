@@ -1,13 +1,8 @@
 #!/bin/bash
 
-if [ -d "django-pipeline-" ]; then
-    cd django-pipeline- && git pull origin main
-else
-    git clone https://github.com/AryanThakur41/django-pipeline-
-fi
+git clone https://github.com/AryanThakur41/django-pipeline-
 
-
-cd /home/ubuntu/django-pipeline-
+sudo cd /home/ubuntu/django-pipeline-
 
 # Pull the latest code from the repository
 git pull origin main
