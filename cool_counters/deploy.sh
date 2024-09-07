@@ -2,7 +2,7 @@
 
 # Clone the repository only if the directory doesn't exist
 #if [ ! -d "/home/ubuntu/django-pipeline-" ]; then
-    git clone https://github.com/AryanThakur41/portfolio.git /home/ubuntu/
+    git clone https://github.com/AryanThakur41/portfolio.git 
 #else
 #    echo "Directory already exists, skipping clone."
 #fi
