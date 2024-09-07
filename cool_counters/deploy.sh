@@ -21,7 +21,7 @@ fi
 source venv/bin/activate
 
 # Install required dependencies
-pip install -r ./cool_counters/requirements.tx
+pip install -r ./cool_counters/requirements.txt
 
 # Collect static files
 python3 manage.py collectstatic --noinput
