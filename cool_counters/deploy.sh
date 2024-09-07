@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sudo su
 # Define repository URL and target directory
 REPO_URL="https://github.com/AryanThakur41/django-pipeline-.git"
 TARGET_DIR="/home/ubuntu/simple-django-app"
