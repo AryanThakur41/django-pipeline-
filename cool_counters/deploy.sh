@@ -12,7 +12,7 @@ fi
 #sudo chmod -R 755 /home/ubuntu/django-pipeline-
 
 # Navigate to the correct directory
-cd /home/ubuntu/django-pipeline- || exit 1
+cd /home/ubuntu/django-pipeline- 
 
 # Pull the latest code from the repository
 git pull origin main
