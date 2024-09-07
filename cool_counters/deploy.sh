@@ -24,7 +24,7 @@ source venv/bin/activate
 pip install -r ./cool_counters/requirements.txt
 
 # Collect static files
-python3 ./cool_counters/manage.py collectstatic --noinput
+# python3 ./cool_counters/manage.py collectstatic --noinput
 
 # Apply migrations
 python3 ./cool_counters/manage.py migrate
