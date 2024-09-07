@@ -2,7 +2,7 @@
 
 git clone https://github.com/AryanThakur41/django-pipeline-
 
-sudo cd /home/ubuntu/django-pipeline-
+cd /home/ubuntu/django-pipeline-
 
 # Pull the latest code from the repository
 git pull origin main
