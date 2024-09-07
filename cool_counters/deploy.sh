@@ -2,6 +2,10 @@
 
 git clone https://github.com/AryanThakur41/django-pipeline-
 
+sudo chown -R ubuntu:ubuntu /home/ubuntu/django-pipeline-
+sudo chmod -R 755 /home/ubuntu/django-pipeline-
+
+
 cd /home/ubuntu/django-pipeline-
 
 # Pull the latest code from the repository
